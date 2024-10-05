@@ -44,8 +44,9 @@ class Simulation:
                 break
 
         # Visualize the final state of the ocean world
-        self.ocean_world.display_grid()
+        self.ocean_world.retrieve_lf_grid(self.life_forms)
+        self.ocean_world.display_grid(len(self.life_forms))
 
 # Example usage
-simulation = Simulation(world_size=200, num_vents=25, num_life_forms=100, vent_production_rate=50)
-simulation.run(steps=1000)
+simulation = Simulation(world_size=200, num_vents=25, num_life_forms=1000, vent_production_rate=50)
+simulation.run(steps=200)

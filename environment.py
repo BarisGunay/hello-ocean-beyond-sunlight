@@ -5,6 +5,7 @@ class OceanWorld:
     def __init__(self, size):
         self.size = size
         self.grid = np.zeros((size, size))  # Chemical concentration grid
+        self.lf_grid = np.zeros((size, size))
 
     def diffuse_chemicals(self, diffusion_rate=0.1):
         new_grid = np.copy(self.grid)
@@ -23,13 +24,30 @@ class OceanWorld:
     def get_chemical_concentration(self, x, y):
         """Returns the chemical concentration at a specific position."""
         return self.grid[x, y]
+    
+    def retrieve_lf_grid(self, life_forms):
+        for life_form in life_forms:
+            self.lf_grid[life_form.x, life_form.y] += 1
 
-    def display_grid(self):
+    def display_grid(self, lf_count):
         """Display the chemical grid for visualization."""
         import matplotlib.pyplot as plt
-        plt.imshow(self.grid, cmap='hot')
-        plt.colorbar(label='H₂S Concentration')
-        plt.title('Chemical Concentration in Ocean World')
+
+        # Create a figure with two subplots (1 row, 2 columns)
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))  # Adjust the figsize as needed
+    
+        # First subplot for the chemical concentration grid
+        cax1 = ax1.imshow(self.grid, cmap='hot')  # Display chemical grid with 'hot' colormap
+        fig.colorbar(cax1, ax=ax1, label='H₂S Concentration')
+        ax1.set_title('Chemical Concentration in Ocean World')
+
+        # Second subplot for the lifeform map
+        cax2 = ax2.imshow(self.lf_grid, cmap='bone')  # Display lifeform grid with 'bone' colormap
+        fig.colorbar(cax2, ax=ax2, label='Life Form Count (' + str(lf_count) + ' total)')
+        ax2.set_title('Life Form Map in Ocean World')
+
+        # Adjust layout to prevent overlap
+        plt.tight_layout()
         plt.show()
 
 class Lifeform:
