@@ -27,6 +27,9 @@ class Simulation:
         for life_form in self.life_forms:
             life_form.move(self.ocean_world.size)
             life_form.consume_chemicals(self.ocean_world)
+            new_life_form = life_form.try_reproduce()
+            if new_life_form != None:
+                self.life_forms.append(new_life_form)
 
         # Remove dead life forms
         self.life_forms = [lf for lf in self.life_forms if lf.is_alive()]
@@ -44,5 +47,5 @@ class Simulation:
         self.ocean_world.display_grid()
 
 # Example usage
-simulation = Simulation(world_size=100, num_vents=5, num_life_forms=10, vent_production_rate=100)
-simulation.run(steps=100)
+simulation = Simulation(world_size=200, num_vents=25, num_life_forms=100, vent_production_rate=50)
+simulation.run(steps=1000)

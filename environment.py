@@ -47,13 +47,21 @@ class Lifeform:
     def consume_chemicals(self, ocean_world):
         """Consume chemical energy from the environment."""
         chemical_energy = ocean_world.get_chemical_concentration(self.x, self.y)
-        if chemical_energy > 0:
+        if chemical_energy > 15:
             self.energy += chemical_energy * 0.1  # Convert chemical energy to biological energy
             ocean_world.add_chemical(self.x, self.y, -chemical_energy * 0.1)  # Reduce chemical concentration
+        self.energy -= 1
 
     def is_alive(self):
         """Check if the life form is alive."""
         return self.energy > self.survival_threshold
+    
+    def try_reproduce(self):
+        if self.energy < 50:
+            return None
+        self.energy = self.energy / 2
+        child = Lifeform(self.x, self.y, self.energy)
+        return child
 
 class HydrothermalVent:
     def __init__(self, x, y, production_rate):
