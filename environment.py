@@ -51,7 +51,7 @@ class OceanWorld:
         ax2.set_title('Autotroph Map in Ocean World')
 
         # Third subplot for the heterotroph map
-        cax3 = ax3.imshow(self.heterotroph_grid, cmap='cool')  # Display heterotroph grid with 'cool' colormap
+        cax3 = ax3.imshow(self.heterotroph_grid, cmap='copper')  # Display heterotroph grid with 'cool' colormap
         fig.colorbar(cax3, ax=ax3, label='Heterotroph Count (' + str(heterotroph_count) + ' total)')
         ax3.set_title('Heterotroph Map in Ocean World')
 
