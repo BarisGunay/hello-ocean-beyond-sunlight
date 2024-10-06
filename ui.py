@@ -27,12 +27,12 @@ class SimulationUI:
     def run_simulation(self):
         try:
             # Retrieve input values from entry widgets
-            worldsize = int(self.entries[0].get() or 0)
-            num_vents = int(self.entries[1].get() or 0)
-            num_autotrophs = int(self.entries[2].get() or 0)
-            num_heterotrophs = int(self.entries[3].get() or 0)
-            vent_production_rate = int(self.entries[4].get() or 0)
-            steps = int(self.entries[5].get() or 0)
+            worldsize = int(self.entries[0].get() or 100)
+            num_vents = int(self.entries[1].get() or 30)
+            num_autotrophs = int(self.entries[2].get() or 500)
+            num_heterotrophs = int(self.entries[3].get() or 10)
+            vent_production_rate = int(self.entries[4].get() or 100)
+            steps = int(self.entries[5].get() or 500)  # Fixed the bug here by adding .get()
 
             # Initialize and run the simulation
             simulation = Simulation(worldsize, num_vents, num_autotrophs, num_heterotrophs, vent_production_rate)

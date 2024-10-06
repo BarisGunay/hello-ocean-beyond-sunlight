@@ -60,5 +60,6 @@ class Simulation:
         self.ocean_world.display_grid(len(self.autotrophs), len(self.heterotrophs))
 
 # Example usage
-simulation = Simulation(world_size=100, num_vents=30, num_autotrophs=500, num_heterotrophs=10, vent_production_rate=100)
-simulation.run(steps=500)
+
+# simulation = Simulation(world_size=100, num_vents=30, num_autotrophs=500, num_heterotrophs=10, vent_production_rate=100)
+# simulation.run(steps=500)
