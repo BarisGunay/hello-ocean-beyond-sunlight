@@ -42,7 +42,7 @@ Provides a user-friendly interface using **Tkinter**. The UI allows users to inp
 1. Clone the repository
 
 ```bash
-   git clone https://github.com/your-username/hello-ocean.git
+   git clone https://github.com/BarisGunay/hello-ocean.git
 ```
 
 2. Install the required Python packages.
@@ -51,7 +51,7 @@ Provides a user-friendly interface using **Tkinter**. The UI allows users to inp
    pip install numpy matplotlib
 ```
 
-3. Run the simulation with the UI (add your own script here).
+3. Run the simulation with the UI.
 
 ```bash
    python ui.py
