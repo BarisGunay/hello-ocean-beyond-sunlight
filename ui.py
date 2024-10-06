@@ -6,7 +6,7 @@ class SimulationUI:
     def __init__(self, win, entries: list):
         self.win = win
         self.win.geometry("410x410")
-        self.win.title("Beyond The Sunrise Simulation")
+        self.win.title("Beyond Sunlight Simulation")
         self.entries = entries
 
         self.labels = ["World Size", "Hydrothermal Vent Count", "Autotrophs Count", 
