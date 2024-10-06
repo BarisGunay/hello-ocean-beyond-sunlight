@@ -1,5 +1,7 @@
 # Beyond Sunlight: An Aquatic Chemosynthetic World
 
+## (DEMO INCLUDED IN PRESENTATION)
+
 **Project Name**: Hello Ocean  
 **Challenge**: NASA Space Apps 2024 - Beyond Sunlight: An Aquatic Chemosynthetic World  
 **Team Members**:  
