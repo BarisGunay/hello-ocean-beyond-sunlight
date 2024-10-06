@@ -31,8 +31,8 @@ class SimulationUI:
         self.text_output.insert(tk.END, "Autotrophs Count: 500\n")
         self.text_output.insert(tk.END, "Heterotrophs Count: 10\n")
         self.text_output.insert(tk.END, "H2S Production Rate: 75\n")
-        self.text_output.insert(tk.END, "Steps: 500\n")
-        self.text_output.insert(tk.END, "Values for most balanced ecosystem. The program will run these values when input text boxes left empty.")
+        self.text_output.insert(tk.END, "Steps: 150\n")
+        self.text_output.insert(tk.END, "Values for most balanced ecosystem. The program will run these values when input\ntext boxes left empty.")
         self.text_output.config(state=tk.DISABLED)  # Make the text box read-only
 
         # Correct command binding for the button
@@ -54,7 +54,7 @@ class SimulationUI:
             num_autotrophs = int(self.entries[2].get() or 500)
             num_heterotrophs = int(self.entries[3].get() or 10)
             vent_production_rate = int(self.entries[4].get() or 75)
-            steps = int(self.entries[5].get() or 500)
+            steps = int(self.entries[5].get() or 150)
 
             # Initialize and run the simulation
             simulation = Simulation(worldsize, num_vents, num_autotrophs, num_heterotrophs, vent_production_rate)

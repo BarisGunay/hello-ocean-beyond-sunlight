@@ -43,7 +43,7 @@ class OceanWorld:
         # First subplot for the chemical concentration grid
         cax1 = ax1.imshow(self.grid, cmap='hot')  # Display chemical grid with 'hot' colormap
         fig.colorbar(cax1, ax=ax1, label='H₂S Concentration')
-        ax1.set_title('Chemical Concentration in Ocean World')
+        ax1.set_title('H₂S Concentration in Ocean World')
 
         # Second subplot for the autotroph map
         cax2 = ax2.imshow(self.autotroph_grid, cmap='bone')  # Display autotroph grid with 'bone' colormap
